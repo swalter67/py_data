@@ -9,7 +9,7 @@ im = Image.open("animal.jpeg")
 
 print(im.format, im.size, im.mode)
 
-im = im.convert("L")
+
 
 
 
@@ -17,7 +17,7 @@ im = im.convert("L")
 zoom = im.crop((400, 100, 800, 600))
 
 
-zoom.show()
+zoom = zoom.convert("L")
 
 
 plt.imshow(zoom)

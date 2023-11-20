@@ -47,7 +47,7 @@ def ft_load(path: str) -> np.ndarray:
             raise AssertionError("File does not exist.")
         if not os.path.isfile(path):
             raise AssertionError("Path is not a file.")
-        if not path.lower().endswith(("jpeg", "jpg")):
+        if not path.endswith(".jpeg", ".jpg"):
              raise AssertionError("File is not a JPEG or JPG image.")
         img = Image.open(path)
         print(f"ths shape of image is : {img.size[1]}, {img.size[0]}, {img.layers}")

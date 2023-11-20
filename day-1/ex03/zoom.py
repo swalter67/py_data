@@ -5,64 +5,82 @@ import numpy as np
 import sys
 import os
 
-def main():
+
+def print_rows_firstelem(arr, int):
     """
-    Image Viewer
-
-    This program opens and displays a grayscale version of a JPG or JPEG image specified by the user.
-    It utilizes the Python Imaging Library (PIL) to load the image and Matplotlib for displaying it.
-
-    Usage:
-        python3 image_viewer.py <image_path>
+    Print a formatted display of the first elements
+    in each row of a given array.
 
     Parameters:
-        <image_path> (str): The path to the JPG or JPEG image file to be viewed.
+    arr (array-like): The input array containing elements to be displayed.
+    int (int): An integer specifying the display format: 0 for single brackets,
+               1 for triple brackets.
 
-    Dependencies:
-        - load_image module (imported as ft_load)
-        - Matplotlib (imported as plt)
-        - Python Imaging Library (PIL) (imported as Image)
-        - NumPy (imported as np)
-        - sys
-        - os
+    Iterates through the rows of the input array and displays the first
+    elements of each row in a formatted manner. The display format is
+    determined by the 'int' parameter. For 'int' equal to 0, single
+    brackets are used to enclose the elements, while for 'int' equal
+    to 1, triple brackets are used.
+    """
+    count = 0
+    for row in arr:
+        count += 1
+    length = count
+    count = 0
+    for row in arr:
+        if count == 0:
+            if int == 1:
+                print("[[[", row[0], "]", sep="")
+            else:
+                print("[[", row[0], sep="")
+        if count > 0 and count < 3 or count > length - 4:
+            if int == 1:
+                if count == length - 1:
+                    print("  [", row[0], "]]]", sep="")
+                elif count < length - 1:
+                    print("  [", row[0], "]", sep="")
+            else:
+                if count == length - 1:
+                    print("  ", row[0], "]]", sep="")
+                else:
+                    print("  ", row[0], sep="")
+        if count == 2:
+            print("  ...")
+        count += 1
 
-    Example:
-        python3 image_viewer.py path/to/your/image.jpg
 
-    Notes:
-        - Only JPG and JPEG formats are supported.
-        - The image will be displayed in grayscale.
-        - The Matplotlib imshow function is used for displaying the image.
-        - The program handles assertions for file format and existence.
+def main():
+    """
+    Load, process, and display an image based on command-line arguments.
 
-    Reference:
-        - Matplotlib imshow documentation: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html
+    This function serves as the main entry point of the script. It loads an
+    image from the command-line argument, performs various image processing
+    operations, and displays the resulting images. The script supports
+    cropping, grayscale conversion, and zoomed image display. Errors related
+    to file format and existence are caught and displayed.
     """
     try:
-        path = sys.argv[1]
-        if not path.lower().endswith(("jpg", "jpeg")):
-            raise AssertionError("Only JPG and JPEG formats are supported.")
-        if not os.path.exists(path):
-            raise AssertionError("File not found:", path)
+        path = "animal.jpeg"
+        image = Image.open(path)
+        print_rows_firstelem(ft_load(path), 0)
+        image.show()
 
-        im = Image.open(path)
-        if im is None:
-            raise AssertionError("Failed to load image.")
+       
+        zoomed_image = image.crop((400, 100, 900, 500))
+        zoomed_image.save("zoomed_image.jpg")
+        print(f"New shape after slicing: {zoomed_image.size}")
 
+        grayscale_image = zoomed_image.convert("L")
+        grayscale_image.show()
+        print_rows_firstelem(np.array(grayscale_image), 1)
 
-        print(ft_load(path))
-        #print(im.format, im.size, im.mode)
+       
 
-        
-        zoom = im.crop((400, 100, 800, 600))
-        zoom = zoom.save("zommed_img.jpg")
-        
-
-        # #zoom.show()
-        # #https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html
-        plt.imshow(zoom, cmap='gray', vmin=0, vmax=255)
-        plt.axis("on")
+        plt.imshow(grayscale_image, cmap='gray', vmin=0, vmax=255)
+        plt.title("Zoomed Image")
+        plt.axis('on')
         plt.show()
+
     except AssertionError as error:
         print(AssertionError.__name__ + ":", error)
 

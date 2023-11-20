@@ -21,6 +21,27 @@ def dict_morse(text):
 
 
 def main():
+    """
+    Morse Encoder
+
+    This program encodes a given text message into Morse code. It takes a single command-line argument,
+    which should be the text message to be encoded.
+
+    Usage:
+        python3.10 morse_encoder.py <text>
+
+    Parameters:
+        <text>: The text message to be encoded.
+
+    The program uses a dictionary to map each character to its Morse code representation. Unsupported
+       characters will raise an AssertionError.
+
+    Example:
+        python3.10 morse_encoder.py "Hello World"
+        Output: .... . .-.. .-.. --- / .-- --- .-. .-.. -..
+    """
+
+
     try:
         if len(sys.argv) != 2 or len(sys.argv[1]) == 0 or not isinstance(
                 sys.argv[1], str):

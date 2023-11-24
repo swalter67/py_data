@@ -1,5 +1,10 @@
 from abc import ABC, abstractmethod
 
+
+# https://docs.python.org/fr/3/library/abc.html
+
+
+
 class Character(ABC):
     """Abstract class for Character
        https://irma.math.unistra.fr/~franck/cours/Pythonl2/cours7_2021_slides.pdf 

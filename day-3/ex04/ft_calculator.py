@@ -1,7 +1,8 @@
 class calculator:
     """ v1 et v2 idem lenght
-    https://fr.wikibooks.org/wiki/Math%C3%A9matiques_avec_Python_et_Ruby/Vecteurs_en_Python#:~:text=Addition%20modifier&text=Alors%20pour%20avoir%20la%20somme,d'entrer%20u%2Bv."""
-
+    https://fr.wikibooks.org/wiki/Math%C3%A9matiques_avec_Python_et_Ruby/Vecteurs_en_Python#:~:text=Addition%20modifier&text=Alors%20pour%20avoir%20la%20somme,d'entrer%20u%2Bv.
+    https://pythonforge.com/methodes-de-classes-et-statiques/"""
+    
     @staticmethod
     def dotproduct(v1: list[float], v2: list[float]):
         """ dot product of two vectors"""

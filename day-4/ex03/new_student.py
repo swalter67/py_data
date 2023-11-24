@@ -2,7 +2,8 @@ import random
 import string
 from dataclasses import dataclass, field
 def generate_id() -> str:
-    """ generate ramdom id 15 char long"""
+    """ generate ramdom id 15 char long
+        https://docs.python.org/3/library/dataclasses.html"""
     return "".join(random.choices(string.ascii_lowercase, k = 15))
 
 

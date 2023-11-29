@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 from load_csv import load
 
+
 def convert(value):
+
     if value.endswith('M'):
         return float(value[:-1]) * 1e6
     if value.endswith('k'):
@@ -11,27 +13,19 @@ def convert(value):
 
 
 def main():
+
     dataset = load("population_total.csv")
-    
-    
     country1 = "France"
     country2 = "Belgium"
     france_data = dataset[dataset['country'] == country1].iloc[:, 1:]
     belgium_data = dataset[dataset['country'] == country2].iloc[:, 1:]
-
-    
     france_pop = france_data.values.flatten()
     belgium_pop = belgium_data.values.flatten()
     years = france_data.columns.astype(int).values
-
     france_pop = [convert(value) for value in france_pop]
     belgium_pop = [convert(value) for value in belgium_pop]
-     
-
-
     plt.plot(years, france_pop, label=country1)
     plt.plot(years, belgium_pop, label=country2)
-
     plt.title("Population in {} and {} ".format(country1, country2))
     plt.xlabel("Year")
     plt.xticks(range(1800, 2051, 40), range(1800, 2051, 40))
@@ -45,10 +39,6 @@ def main():
     plt.yticks(y_ticks, ["{:,.0f}M".format(pop / 1e6) for pop in y_ticks])
     plt.show()
 
-    
-   
-
 
 if __name__ == "__main__":
-    main()    
-
+    main()

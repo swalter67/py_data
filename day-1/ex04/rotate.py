@@ -2,20 +2,16 @@ from load_image import ft_load
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
-import sys
-import os
 
 
 def print_rows_firstelem(arr, int):
     """
     Print a formatted display of the first elements
     in each row of a given array.
-
     Parameters:
     arr (array-like): The input array containing elements to be displayed.
     int (int): An integer specifying the display format: 0 for single brackets,
                1 for triple brackets.
-
     Iterates through the rows of the input array and displays the first
     elements of each row in a formatted manner. The display format is
     determined by the 'int' parameter. For 'int' equal to 0, single
@@ -111,11 +107,8 @@ def main():
     to file format and existence are caught and displayed.
     """
     try:
-        
-        
         path = "animal.jpeg"
         image = Image.open(path)
-        
         image.show()
 
         square_crop = crop_image(image)

@@ -2,8 +2,6 @@ from load_image import ft_load
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
-import sys
-import os
 
 
 def print_rows_firstelem(arr, int):
@@ -64,23 +62,16 @@ def main():
         image = Image.open(path)
         print_rows_firstelem(ft_load(path), 0)
         image.show()
-
-       
         zoomed_image = image.crop((400, 100, 900, 500))
         zoomed_image.save("zoomed_image.jpg")
         print(f"New shape after slicing: {zoomed_image.size}")
-
         grayscale_image = zoomed_image.convert("L")
         grayscale_image.show()
         print_rows_firstelem(np.array(grayscale_image), 1)
-
-       
-
         plt.imshow(grayscale_image, cmap='gray', vmin=0, vmax=255)
         plt.title("Zoomed Image")
         plt.axis('on')
         plt.show()
-
     except AssertionError as error:
         print(AssertionError.__name__ + ":", error)
 

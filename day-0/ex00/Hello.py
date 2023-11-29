@@ -37,7 +37,8 @@ Dictionary (Dict):
 A dictionary is an unordered collection of key-value pairs.
 Keys are unique and used to access values.
 Created using curly braces {} with key-value pairs separated by colons :.
-Dictionaries are mutable, allowing the addition, modification, and deletion of key-value pairs."""
+Dictionaries are mutable, allowing the addition, modification,
+and deletion of key-value pairs."""
 
 
 print(ft_list)

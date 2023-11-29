@@ -34,7 +34,7 @@ def ft_tqdm(lst: range) -> None:
     """
     # Get the total number of items in the range
     total = len(lst)
-     # Record the start time for measuring elapsed time
+    # Record the start time for measuring elapsed time
     start_time = time.time()
     # Get the terminal width and calculate the progress bar width
     terminal_width = shutil.get_terminal_size().columns - 30
@@ -43,7 +43,6 @@ def ft_tqdm(lst: range) -> None:
     for i, item in enumerate(lst, start=1):
         progress = int(i / total * progress_bar_width)
 
-        
         # Calculate elapsed time, speed, and estimated time of arrival (ETA)
         elapsed_time = time.time() - start_time
         speed = i / elapsed_time

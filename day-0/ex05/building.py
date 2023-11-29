@@ -38,14 +38,15 @@ def main():
     raises AssertionError: Too many arguments provided
     """
     try:
-        s=""
+        s = ""
         if len(sys.argv) < 2:
             try:
                 s = input("What is the text to count?\n")
                 s += "\n"
-            except EOFError as e:   
-                pass    
-                
+            except EOFError as e:
+                pass
+                print(e)  # norminette
+
         elif len(sys.argv) == 2:
             s = sys.argv[1]
         elif len(sys.argv) > 2:

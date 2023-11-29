@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    
+
     certified_42 = "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
     income_data = load(certified_42)
     life_expectancy_data = load("life_expectancy_years.csv")

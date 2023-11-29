@@ -1,5 +1,6 @@
 from S1E9 import Character
 
+
 class Baratheon(Character):
     """ Baratheon Family Character"""
     def __init__(self, first_name, is_alive=True):
@@ -19,11 +20,10 @@ class Lannister(Character):
         self.family_name = "Lannister"
         self.eyes = "blue"
         self.hairs = "light"
-    
+
     def count_gold(self):
         print(f"{self.first_name} has a wealth level of Rich")
 
-    @classmethod        
+    @classmethod
     def create_lannister(cls, first_name, is_alive=True):
         return cls(first_name, is_alive)
-

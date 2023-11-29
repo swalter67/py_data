@@ -1,14 +1,16 @@
 from typing import Any
 
 
-
-
 def ft_statistics(*args: Any, **kwargs: Any) -> None:
 
-    """ The *args syntax in a function signature allows you to pass a variable number of non-keyword (positional) arguments to the function.
+    """ The *args syntax in a function signature allows
+        you to pass a variable number
+        of non-keyword (positional) arguments to the function.
         It collects these arguments into a tuple.
 
-        The **kwargs syntax allows you to pass a variable number of keyword arguments (i.e., named arguments) to the function.
+        The **kwargs syntax allows you to pass a variable number
+            of keyword arguments\
+            (i.e., named arguments) to the function.
         It collects these arguments into a dictionary."""
     args_list = list(args)
     total = 0
@@ -48,4 +50,4 @@ def ft_statistics(*args: Any, **kwargs: Any) -> None:
         if value in result:
             print(f"{value} : {result[value]}")
         else:
-            print("ERROR")    
+            print("ERROR")

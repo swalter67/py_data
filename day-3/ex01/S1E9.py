@@ -18,11 +18,12 @@ class Character(ABC):
         self.is_alive = False
 
         def __str__(self):
-            return f"{self.first_name} - {'Alive' if self.is_alive else 'Dead'}"
+            return f"{self.first_name}\
+                - {'Alive' if self.is_alive else 'Dead'}"
 
     def __repr__(self):
-        return f"{self.__class__.__name__}('{self.first_name}', is_alive={self.is_alive})"
-
+        return f"{self.__class__.__name__}\
+            ('{self.first_name}', is_alive={self.is_alive})"
 
 
 class Stark(Character):

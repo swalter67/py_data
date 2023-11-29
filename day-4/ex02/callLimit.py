@@ -1,5 +1,6 @@
 from typing import Any
 
+
 def callLimit(limit: int):
     count = 0
 
@@ -13,7 +14,7 @@ def callLimit(limit: int):
                 else:
                     print(f"Error: {function} call too many times")
             except AssertionError as e:
-                print("Error:", e )
+                print("Error:", e)
         return limit_function
 
     return callLimiter

@@ -8,4 +8,4 @@ v2 * 5
 print("---")
 v3 = calculator([10.0, 15.0, 20.0])
 v3 - 5
-v3 / 5 ##[1.0, 2.0, 3.0] ?? il reprnd le v3 - 5 ??
+v3 / 5  # [1.0, 2.0, 3.0] ?? il reprnd le v3 - 5 ??

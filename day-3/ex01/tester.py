@@ -14,8 +14,9 @@ print(Cersei.__dict__)
 print(Cersei.__str__)
 print(Cersei.is_alive)
 print("---")
-#Robert.say_house_words()
-#Cersei.count_gold()
+# Robert.say_house_words()
+# Cersei.count_gold()
 
 Jaine = Lannister.create_lannister("Jaine", True)
-print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
+print(f"Name : {Jaine.first_name, type(Jaine).__name__}\
+    , Alive : {Jaine.is_alive}")
